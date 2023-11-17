@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULAR</title>
+    <!-- Puedes agregar estilos CSS aquí si es necesario -->
+</head>
+<body>
+
+<input type=">
+
+
+
+
+
+
+
+    <div>
+        <input type="text" id="display" disabled>
+    </div>
+    <div>
+        <button onclick="generateRandomNumber()">GENERAR</button>
+        <button onclick="calculate('+')">MAXIMO</button>
+        <button onclick="calculate('-')">MINIMO</button>
+        <button onclick="calculate('')">TOTAL</button>
+    </div>
+
+    <script>
+        function generateRandomNumber() {
+            document.getElementById('display').value = Math.floor(Math.random() * 10) + 1;
+        }
+
+        function calculate(operator) {
+            try {
+                const currentResult = parseFloat(document.getElementById('display').value);
+                const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+                switch (operator) {
+                    case '+':
+                        document.getElementById('display').value = currentResult + randomNumber;
+                        break;
+                    case '*':
+                        document.getElementById('display').value = currentResult * randomNumber;
+                        break;
+                    case '-':
+                        document.getElementById('display').value = currentResult / randomNumber;
+                        break;
+                    default:
+                        break;
+                }
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+
+</body>
+</html>
